@@ -15,7 +15,7 @@ class Player(Base):
     position = Column(String, nullable=False)
     last_changed_date = Column(Date, nullable=False)
     
-    performances = relationship("Performance", back_populates= "player")
+    performances = relationship("Performance", back_populates="player")
 
 
     # Many-to-many relationship b/n Player and Team tables 
@@ -51,7 +51,7 @@ class Team(Base):
     __tablename__ = "team"
 
     team_id = Column(Integer, primary_key=True, index=True)
-    team_name = Column(String, nallable=False)
+    team_name = Column(String, nullable=False)
     last_changed_date = Column(Date, nullable=False)
 
     league_id = Column(Integer, ForeignKey("league.league_id"))
@@ -59,17 +59,13 @@ class Team(Base):
     league = relationship("League", back_populates="teams")
 
     players = relationship("Player", secondary="team_player",
-                           back_populates="temas")
+                           back_populates="teams")
     
 class TeamPlayer(Base):
     __tablename__ = "team_player"
         
     team_id = Column(Integer, ForeignKey("team.team_id"),
-                         primary_key=True, index=True)
+                     primary_key=True, index=True)
     player_id = Column(Integer, ForeignKey("player.player_id"),
-                           primary_key=True, index=True)
+                        primary_key=True, index=True)
     last_changed_date = Column(Date, nullable=False)
-
-
-
-
