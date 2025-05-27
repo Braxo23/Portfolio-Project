@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy.orm import joinedload
 from datetime import date
 
-import chapter4.Mywork.models as models
+import models
 
 def get_player(db: Session, player_id: int):
     return db.query(models.Player).filter(
