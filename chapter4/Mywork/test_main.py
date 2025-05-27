@@ -7,7 +7,7 @@ client = TestClient(app)
 def test_read_main():
     response =client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"messages": "API health check successful"}
+    assert response.json() == {"message": "API health check successful"}
 
 # test /v0/players/
 def test_read_player():

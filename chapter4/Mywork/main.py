@@ -1,5 +1,5 @@
 """FastAPI program - Chapter 4"""
-from fastapi import Depends,FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
 from datetime import date
 
@@ -18,7 +18,7 @@ def get_db():
 
 @app.get("/")
 async def root():
-    return {"messages": "API health check successful"}
+    return {"message": "API health check successful"}
 
 
 @app.get("/v0/players/", response_model=list[schemas.Player])
@@ -52,12 +52,12 @@ def read_player(player_id: int,
          response_model=list[schemas.Performance])
 def read_performances(skip: int = 0,
                 limit: int = 100,
-                minimum_last_changed_date: date= None,
+                minimum_last_changed_date: date = None,
                 db: Session = Depends(get_db)):
     performances = crud.get_performances(db,
                 skip=skip,
                 limit=limit,
-                min_last_changed=minimum_last_changed_date)
+                min_last_changed_date=minimum_last_changed_date)
     return performances
 
 @app.get("/v0/leagues/{league_id}", response_model=schemas.League)
