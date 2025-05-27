@@ -1,0 +1,6 @@
+#Chpater 4 pip requirments 
+SQLAlchemy>=2.0.0
+fastapi[standard]>=0.115.0
+pydantic>=2.4.0
+uvicorn>=0.23.0
+httpx>=0.27.0
