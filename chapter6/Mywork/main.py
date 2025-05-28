@@ -26,15 +26,21 @@ Get information about all the SWC fantasy football leagues and the teams in them
 """
 
 # FastAPI constructor with additional details added for OpenAPI Specification
-app = FastAPI()
+app = FastAPI(
+    description=api_description,
+    title="Sports World Central (SWC) Fantasy Football API",
+    version="0.1",
+)
+
 
 # Dependency
 def get_db():
     db = SessionLocal()
-    try: 
+    try:
         yield db
     finally:
         db.close()
+
 
 @app.get(
     "/",
