@@ -5,8 +5,8 @@ from sqlalchemy.orm import Session
 from datetime import date
 
 
-import crud, schemas
-from database import SessionLocal
+import chapter6.crud as crud, schemas
+from chapter6.database import SessionLocal
 
 api_description = """
 This API provides read-only access to info from the Sports World Central (SWC) Fantasy Football API. 
