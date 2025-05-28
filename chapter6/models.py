@@ -2,7 +2,7 @@
 from sqlalchemy import Column, ForeignKey, Integer, String, Float, Date
 from sqlalchemy.orm import relationship
 
-from chapter6.database import Base
+from database import Base
 
 
 class Player(Base):
