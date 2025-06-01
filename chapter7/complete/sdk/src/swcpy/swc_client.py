@@ -1,5 +1,5 @@
 import httpx
-import swcpy.swc_config as config
+import chapter7.sdk.swc_config as config
 from .schemas import League, Team, Player, Performance, Counts
 from typing import List
 import backoff
