@@ -1,2 +1,2 @@
 from .swc_client import SWCClient
-from .....sdk.swc_config import SWCConfig
+from .....sdk.sdk.src.swcpy.swc_config import SWCConfig
